@@ -57,28 +57,28 @@ fan_speed_map = {
     0b011: "Poweroff"
 }
 
+
 # 温度提取函数（从CC字节中解析）
-def temp_from_byte(codec:int)->int:
+def temp_from_byte(codec: int) -> int:
     # r05d温度是用数值转换成格雷码，然后+17度表示的
 
     # if codec == 0b1110:
     #     print("error temperature codec")
     #     return None
     temp_map = {
-        0b0000 :0,
-        0b0001 :1,
-        0b0011 :2,
-        0b0010 :3,
-        0b0110 :4,
-        0b0111 :5,
-        0b0101 :6,
-        0b0100 :7,
-        0b1100 :8,
-        0b1101 :9,
-        0b1001 :10,
-        0b1000 :11,
-        0b1010 :12,
-        0b1011 :13,
+        0b0000: 0,
+        0b0001: 1,
+        0b0011: 2,
+        0b0010: 3,
+        0b0110: 4,
+        0b0111: 5,
+        0b0101: 6,
+        0b0100: 7,
+        0b1100: 8,
+        0b1101: 9,
+        0b1001: 10,
+        0b1000: 11,
+        0b1010: 12,
+        0b1011: 13,
         0b1110: 14}
-    return temp_map[codec]+17
-    
+    return temp_map[codec] + 17
